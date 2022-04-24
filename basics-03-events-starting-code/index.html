@@ -30,16 +30,11 @@
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
 
-      <div>
-        <label for="name">Enter name: </label>
-        <input
-          id="name"
-          type="text"
-          v-on:input="setName($event, 'Vuemacher')"
-          v-on:keyup.enter="confirmInput"
-        />
-      </div>
-      <p>Your name: {{ confirmedName }}</p>
+      <label for="name">Enter name: </label>
+      <input id="name" type="text" v-model="name" />
+      <button v-on:click="resetInput">Reset Name</button>
+      <p>Your name: {{ name }}</p>
+
       <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <button>Sign Up</button>
