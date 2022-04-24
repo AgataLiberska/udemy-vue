@@ -20,7 +20,6 @@
       <h2>Events in Action</h2>
       <button v-on:click="add">Add</button>
       <button v-on:click="reduce">Remove</button>
-      <p>Result: {{ counter }}</p>
       <label for="increment">Set Increment: </label>
       <input
         type="number"
@@ -28,9 +27,23 @@
         v-bind:value="increment"
         id="increment"
       />
-      <label for="name">Enter name: </label>
-      <input id="name" type="text" v-on:input="setName($event, 'Vuemacher')" />
-      <p>My name is {{ name }}</p>
+
+      <p>Result: {{ counter }}</p>
+
+      <div>
+        <label for="name">Enter name: </label>
+        <input
+          id="name"
+          type="text"
+          v-on:input="setName($event, 'Vuemacher')"
+          v-on:keyup.enter="confirmInput"
+        />
+      </div>
+      <p>Your name: {{ confirmedName }}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
