@@ -16,8 +16,8 @@ const app = Vue.createApp({
     setIncrement(e) {
       this.increment = Number(e.target.value)
     },
-    setName(e) {
-      this.name = e.target.value
+    setName(e, lastName) {
+      this.name = e.target.value + " " + lastName
     },
   },
 })

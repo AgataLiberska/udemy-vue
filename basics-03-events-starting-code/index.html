@@ -29,7 +29,7 @@
         id="increment"
       />
       <label for="name">Enter name: </label>
-      <input id="name" type="text" v-on:input="setName" />
+      <input id="name" type="text" v-on:input="setName($event, 'Vuemacher')" />
       <p>My name is {{ name }}</p>
     </section>
   </body>
