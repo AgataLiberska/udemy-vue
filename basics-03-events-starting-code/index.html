@@ -21,7 +21,13 @@
       <button v-on:click="add">Add</button>
       <button v-on:click="reduce">Remove</button>
       <p>Result: {{ counter }}</p>
-      <input type="number" v-on:input="setIncrement" v-bind:value="increment" />
+      <label for="increment">Set Increment: </label>
+      <input
+        type="number"
+        v-on:input="setIncrement"
+        v-bind:value="increment"
+        id="increment"
+      />
     </section>
   </body>
 </html>
