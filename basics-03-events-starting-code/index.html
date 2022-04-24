@@ -28,6 +28,9 @@
         v-bind:value="increment"
         id="increment"
       />
+      <label for="name">Enter name: </label>
+      <input id="name" type="text" v-on:input="setName" />
+      <p>My name is {{ name }}</p>
     </section>
   </body>
 </html>

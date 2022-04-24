@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       counter: 0,
       increment: 1,
+      name: "",
     }
   },
   methods: {
@@ -12,9 +13,11 @@ const app = Vue.createApp({
     reduce() {
       this.counter -= this.increment
     },
-    setIncrement() {
-      const incrementEl = document.querySelector('input[type="number"]')
-      this.increment = Number(incrementEl.value)
+    setIncrement(e) {
+      this.increment = Number(e.target.value)
+    },
+    setName(e) {
+      this.name = e.target.value
     },
   },
 })
