@@ -18,13 +18,13 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add">Add</button>
-      <button v-on:click="reduce">Remove</button>
+      <button @click="add">Add</button>
+      <button @click="reduce">Remove</button>
       <label for="increment">Set Increment: </label>
       <input
         type="number"
-        v-on:input="setIncrement"
-        v-bind:value="increment"
+        @input="setIncrement"
+        :value="increment"
         id="increment"
       />
       <p v-once>Starting Counter: {{ counter }}</p>
@@ -32,10 +32,10 @@
 
       <label for="name">Enter name: </label>
       <input id="name" type="text" v-model="name" />
-      <button v-on:click="resetInput">Reset Name</button>
+      <button @click="resetInput">Reset Name</button>
       <p>Your name: {{ fullname }}</p>
 
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="text" />
         <button>Sign Up</button>
       </form>
