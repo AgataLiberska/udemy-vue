@@ -7,14 +7,26 @@ const app = Vue.createApp({
       confirmedName: "",
     }
   },
+  computed: {
+    fullname() {
+      console.log("Running again")
+      if (this.name === "") {
+        return ""
+      }
+      return this.name + " " + "LastName"
+    },
+  },
   methods: {
     add() {
+      console.log("add to counter Running again")
       this.counter += this.increment
     },
     reduce() {
+      console.log("eeduce counter Running again")
       this.counter -= this.increment
     },
     setIncrement(e) {
+      console.log(" set increment Running again")
       this.increment = Number(e.target.value)
     },
     setName(e, lastName) {
@@ -29,6 +41,7 @@ const app = Vue.createApp({
     resetInput() {
       this.name = ""
     },
+    outputFullname() {},
   },
 })
 

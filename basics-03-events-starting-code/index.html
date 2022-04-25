@@ -33,7 +33,7 @@
       <label for="name">Enter name: </label>
       <input id="name" type="text" v-model="name" />
       <button v-on:click="resetInput">Reset Name</button>
-      <p>Your name: {{ name }}</p>
+      <p>Your name: {{ fullname }}</p>
 
       <form v-on:submit.prevent="submitForm">
         <input type="text" />
