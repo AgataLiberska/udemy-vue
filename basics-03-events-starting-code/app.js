@@ -5,6 +5,7 @@ const app = Vue.createApp({
       increment: 1,
       name: "",
       confirmedName: "",
+      //fullname: "",
     }
   },
   computed: {
@@ -16,17 +17,19 @@ const app = Vue.createApp({
       return this.name + " " + "LastName"
     },
   },
+  watch: {
+    // name(value) {
+    //   this.fullname = value + " " + "Last"
+    // },
+  },
   methods: {
     add() {
-      console.log("add to counter Running again")
       this.counter += this.increment
     },
     reduce() {
-      console.log("eeduce counter Running again")
       this.counter -= this.increment
     },
     setIncrement(e) {
-      console.log(" set increment Running again")
       this.increment = Number(e.target.value)
     },
     setName(e, lastName) {
