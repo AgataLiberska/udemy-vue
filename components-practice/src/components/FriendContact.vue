@@ -10,6 +10,7 @@
       <li><strong>Phone:</strong> {{ phoneNumber }}</li>
       <li><strong>Email:</strong> {{ emailAddress }}</li>
     </ul>
+    <button @click="$emit('delete-friend', id)">Delete</button>
   </li>
 </template>
 
@@ -42,6 +43,18 @@ export default {
       // },
     },
   },
+  emits: ["toggle-favorite", "delete-friend"],
+  // emits: {
+  //   "toggle-favorite": function (id) {
+  //     //this is info that function in app should need id
+  //     if (id) {
+  //       return true
+  //     } else {
+  //       console.warn("Id is missing")
+  //       return false
+  //     }
+  //   },
+  // },
   data() {
     return {
       detailsAreVisible: false,
